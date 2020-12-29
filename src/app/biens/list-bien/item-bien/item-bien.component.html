@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{bien.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ bien.title | uppercase }}</h5>
+      <p class="card-text">{{ bien.description | summarize: 50 }}</p>
+      <!-- <span class="float-left btn btn-sm btn-outline-danger desabled">{{utilsService.numberSeparator(bien.price,'.')}} Fcfa </span> -->
+      <span class="float-left btn btn-sm btn-outline-danger desabled">{{ bien.price | separator: '.' }} Fcfa </span>
+      <span class="btn btn-sm ">{{ bien.createAt | timeLeft }}</span>
+      <a [routerLink]="['/biens/detail/', bien.id]" class="btn btn-sm btn-primary float-right">Reserver</a>
+    </div>
+</div>
